@@ -1,0 +1,55 @@
+---
+const testimonials = [
+  {
+    content: "Excelente servicio profesional. El equipo fue muy eficiente y dejó todo impecable.",
+    author: "María García",
+    role: "Cliente Residencial",
+    image: "/images/testimonials/default-avatar.png"
+  },
+  {
+    content: "Muy satisfecho con el trabajo realizado. Cumplieron con todos los plazos acordados.",
+    author: "Juan Rodríguez",
+    role: "Propietario de Local Comercial",
+    image: "/images/testimonials/default-avatar.png"
+  },
+  {
+    content: "Gran profesionalidad y atención al detalle. El servicio superó mis expectativas.",
+    author: "Ana Martínez",
+    role: "Administradora de Fincas",
+    image: "/images/testimonials/default-avatar.png"
+  }
+];
+---
+
+<section class="bg-white py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-3xl font-extrabold text-gray-900">
+        Lo que dicen nuestros clientes
+      </h2>
+      <p class="mt-4 text-xl text-gray-500">
+        Testimonios de clientes satisfechos con nuestros servicios
+      </p>
+    </div>
+    <div class="mt-16 grid gap-8 lg:grid-cols-3">
+      {testimonials.map(testimonial => (
+        <div class="bg-white rounded-lg shadow-sm p-8">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <div class="h-12 w-12 rounded-full bg-primary-100 flex items-center justify-center">
+                <span class="text-xl font-medium text-primary-600">
+                  {testimonial.author.charAt(0)}
+                </span>
+              </div>
+            </div>
+            <div class="ml-4">
+              <h3 class="text-lg font-medium text-gray-900">{testimonial.author}</h3>
+              <p class="text-gray-500">{testimonial.role}</p>
+            </div>
+          </div>
+          <p class="mt-6 text-gray-600">"{testimonial.content}"</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

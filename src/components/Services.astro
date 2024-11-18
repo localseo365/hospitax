@@ -1,0 +1,110 @@
+---
+const services = [
+  {
+    title: 'Vaciado de Pisos',
+    description: '¿Necesitas vaciar un piso de forma rápida, segura y profesional? Ofrecemos un servicio integral de vaciado, ideal para herencias, mudanzas o reformas. Nos encargamos de retirar muebles, electrodomésticos y enseres, garantizando un espacio limpio y listo para su uso.',
+    features: [
+      'Equipo especializado con años de experiencia',
+      'Gestión responsable y sostenible de los residuos',
+      'Presupuestos personalizados y transparentes'
+    ],
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>`
+  },
+  {
+    title: 'Vaciado de Locales Comerciales',
+    description: 'Ayudamos a empresarios y comerciantes a vaciar sus locales de manera eficiente. Ya sea que necesites desocupar un espacio comercial para renovarlo o devolverlo, somos la solución confiable en Hospitalet de Llobregat.',
+    features: [
+      'Retirada de mobiliario comercial, maquinaria y materiales',
+      'Limpieza posterior del espacio para entregas impecables',
+      'Horarios flexibles adaptados a tus necesidades'
+    ],
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>`
+  },
+  {
+    title: 'Vaciado de Oficinas',
+    description: 'Opta por un vaciado de oficinas sin estrés con HOSPITAX. Nos ocupamos de todo, desde la retirada de muebles hasta la eliminación de equipos electrónicos obsoletos, siempre cumpliendo con la normativa medioambiental.',
+    features: [
+      'Desmontaje y retirada de escritorios, sillas y archivadores',
+      'Gestión adecuada de equipos electrónicos y documentos confidenciales',
+      'Servicio rápido y discreto para minimizar interrupciones'
+    ],
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>`
+  },
+  {
+    title: 'Gestión de Residuos y Reciclaje',
+    description: 'Nos preocupamos por el medio ambiente. Nuestro servicio incluye una gestión responsable de los residuos generados durante el vaciado, priorizando el reciclaje y la reutilización.',
+    features: [
+      'Transporte de residuos a puntos de reciclaje autorizados',
+      'Separación y clasificación profesional de materiales reciclables',
+      'Eliminación segura de materiales peligrosos o no reciclables'
+    ],
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>`
+  },
+  {
+    title: 'Servicios Adicionales',
+    description: 'Completa el vaciado de tu propiedad con nuestros servicios complementarios para maximizar los beneficios de nuestro servicio.',
+    features: [
+      'Limpieza a fondo: Entrega tus espacios en condiciones óptimas',
+      'Desinfección profesional: Ideal para garantizar un entorno saludable',
+      'Pequeñas reparaciones: Reparación de paredes, enchufes y otros detalles'
+    ],
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>`
+  }
+];
+---
+
+<section id="servicios" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:text-center">
+      <h2 class="text-base text-primary-600 font-semibold tracking-wide uppercase">Nuestros Servicios</h2>
+      <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+        Soluciones integrales de vaciado
+      </p>
+      <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+        Ofrecemos servicios profesionales y eficientes para todo tipo de vaciados, siempre con compromiso medioambiental.
+      </p>
+    </div>
+
+    <div class="mt-20">
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+        {services.map(service => (
+          <div class="relative p-6 bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div>
+              <span class="inline-flex items-center justify-center p-3 bg-primary-50 rounded-md">
+                <Fragment set:html={service.icon} />
+              </span>
+            </div>
+            <div class="mt-8">
+              <h3 class="text-lg font-medium text-gray-900">
+                {service.title}
+              </h3>
+              <p class="mt-2 text-base text-gray-500">
+                {service.description}
+              </p>
+              <ul class="mt-4 space-y-2">
+                {service.features.map(feature => (
+                  <li class="flex items-start">
+                    <svg class="h-5 w-5 text-primary-500 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="ml-2 text-gray-600">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="mt-6">
+              <a 
+                href="https://wa.link/hgjzfb"
+                target="_blank"
+                rel="noopener noreferrer" 
+                class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700"
+              >
+                Solicitar Presupuesto →
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

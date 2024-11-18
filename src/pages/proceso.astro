@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+
+---
+
+<Layout title="Proceso - HOSPITAX">
+  <Header />
+  <main class="pt-16">
+    <div class="bg-white">
+      <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            Nuestro Proceso
+          </h1>
+          <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
+            Conoce paso a paso cómo trabajamos para garantizar un servicio eficiente y profesional.
+          </p>
+        </div>
+
+        <div class="mt-12">
+          <ProcessSteps />
+        </div>
+
+        <div class="mt-16">
+          <h2 class="text-2xl font-bold text-gray-900 text-center">Preguntas Frecuentes</h2>
+          <dl class="mt-8 space-y-6 divide-y divide-gray-200">
+            <div class="pt-6">
+              <dt class="text-lg">
+                <button class="text-left w-full flex justify-between items-start text-gray-900">
+                  <span class="font-medium">¿Cuánto tiempo tarda el proceso de vaciado?</span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12">
+                <p class="text-base text-gray-500">
+                  El tiempo varía según el tamaño y contenido del espacio. Normalmente, un piso estándar puede vaciarse en 1-2 días.
+                </p>
+              </dd>
+            </div>
+
+            <div class="pt-6">
+              <dt class="text-lg">
+                <button class="text-left w-full flex justify-between items-start text-gray-900">
+                  <span class="font-medium">¿Qué hacen con los objetos retirados?</span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12">
+                <p class="text-base text-gray-500">
+                  Clasificamos todos los objetos para su reciclaje o disposición adecuada, siguiendo normativas ambientales.
+                </p>
+              </dd>
+            </div>
+
+            <div class="pt-6">
+              <dt class="text-lg">
+                <button class="text-left w-full flex justify-between items-start text-gray-900">
+                  <span class="font-medium">¿Ofrecen servicio de limpieza posterior?</span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12">
+                <p class="text-base text-gray-500">
+                  Sí, incluimos servicio de limpieza básica después del vaciado. También ofrecemos limpieza profunda opcional.
+                </p>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

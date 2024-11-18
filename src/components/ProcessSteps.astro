@@ -1,0 +1,48 @@
+---
+const steps = [
+  {
+    number: '01',
+    title: 'Contacto Inicial',
+    description: 'Nos contactas y programamos una visita para evaluar el trabajo.'
+  },
+  {
+    number: '02',
+    title: 'Evaluación y Presupuesto',
+    description: 'Realizamos una evaluación detallada y te enviamos un presupuesto sin compromiso.'
+  },
+  {
+    number: '03',
+    title: 'Planificación',
+    description: 'Acordamos fechas y organizamos el equipo y recursos necesarios.'
+  },
+  {
+    number: '04',
+    title: 'Ejecución',
+    description: 'Realizamos el vaciado de forma eficiente y profesional.'
+  },
+  {
+    number: '05',
+    title: 'Gestión de Residuos',
+    description: 'Clasificamos y gestionamos los residuos de forma sostenible.'
+  },
+  {
+    number: '06',
+    title: 'Limpieza Final',
+    description: 'Realizamos una limpieza completa del espacio.'
+  }
+];
+---
+
+<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+  {steps.map(step => (
+    <div class="relative p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+      <div class="flex items-center">
+        <span class="text-4xl font-bold text-primary-600">{step.number}</span>
+        <div class="ml-4">
+          <h3 class="text-lg font-medium text-gray-900">{step.title}</h3>
+          <p class="mt-2 text-gray-500">{step.description}</p>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>

@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={`${post.data.title} - HOSPITAX Blog`}>
+  <Header />
+  <main class="pt-16">
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <header class="text-center mb-16">
+        <h1 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          {post.data.title}
+        </h1>
+        <div class="mt-4 text-gray-500">
+          {new Date(post.data.publishDate).toLocaleDateString('es-ES', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          })}
+        </div>
+      </header>
+      
+      <div class="prose prose-lg mx-auto">
+        <Content />
+      </div>
+    </article>
+  </main>
+</Layout>

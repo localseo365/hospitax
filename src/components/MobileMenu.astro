@@ -1,0 +1,59 @@
+---
+---
+
+<div id="mobile-menu" class="hidden fixed inset-0 z-50">
+  <div class="fixed inset-0 bg-gray-600 bg-opacity-75" aria-hidden="true"></div>
+  
+  <div class="fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-xl flex flex-col">
+    <div class="flex items-center justify-between h-16 px-4 border-b border-gray-200">
+      <span class="text-2xl font-bold text-primary-600">HOSPITAX</span>
+      <button id="close-menu" class="p-2 text-gray-600 hover:text-primary-600">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    
+    <nav class="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
+      <a href="/" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-primary-600 rounded-md">
+        Inicio
+      </a>
+      <a href="/servicios" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-primary-600 rounded-md">
+        Servicios
+      </a>
+      <a href="/sobre-nosotros" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-primary-600 rounded-md">
+        Sobre Nosotros
+      </a>
+      <a href="/portfolio" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-primary-600 rounded-md">
+        Portfolio
+      </a>
+      <a href="/proceso" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-primary-600 rounded-md">
+        Proceso
+      </a>
+      <a href="/contacto" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-primary-600 rounded-md">
+        Contacto
+      </a>
+    </nav>
+  </div>
+</div>
+
+<script>
+  const mobileMenu = document.getElementById('mobile-menu');
+  const openButton = document.querySelector('[aria-label="Abrir menú"]');
+  const closeButton = document.getElementById('close-menu');
+
+  openButton?.addEventListener('click', () => {
+    mobileMenu?.classList.remove('hidden');
+  });
+
+  closeButton?.addEventListener('click', () => {
+    mobileMenu?.classList.add('hidden');
+  });
+
+  // Close menu when clicking outside
+  mobileMenu?.addEventListener('click', (e) => {
+    if (e.target === mobileMenu) {
+      mobileMenu.classList.add('hidden');
+    }
+  });
+</script>

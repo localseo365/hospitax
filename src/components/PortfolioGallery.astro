@@ -1,0 +1,39 @@
+---
+const projects = [
+  {
+    title: 'Vaciado de Piso en L\'Hospitalet',
+    category: 'Residencial',
+    imageUrl: 'https://badea.s3.fr-par.scw.cloud/baix-llobregat/img/vaciado-de-pisos-y-locales-en-sant-boi-de-llobregat-08830-130.jpg',
+    description: 'Vaciado completo de un piso de 90m² en tiempo récord'
+  },
+  {
+    title: 'Local Comercial en Santa Eulàlia',
+    category: 'Comercial',
+    imageUrl: 'https://badeas.s3.eu.cloud-object-storage.appdomain.cloud/barcelones/img/vaciado-de-pisos-y-locales-en-badalona-21.jpg',
+    description: 'Vaciado y limpieza de local comercial de 120m²'
+  },
+  {
+    title: 'Oficinas en La Torrassa',
+    category: 'Oficinas',
+    imageUrl: 'https://badea.eu-central-1.linodeobjects.com/tarragona/img/vaciado-de-pisos-en-.jpg',
+    description: 'Proyecto de vaciado de oficinas con reciclaje de mobiliario'
+  }
+];
+---
+
+<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+  {projects.map(project => (
+    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+      <img 
+        src={project.imageUrl} 
+        alt={project.title}
+        class="w-full h-48 object-cover"
+      />
+      <div class="p-6">
+        <span class="text-sm font-medium text-primary-600">{project.category}</span>
+        <h3 class="mt-2 text-xl font-semibold text-gray-900">{project.title}</h3>
+        <p class="mt-2 text-gray-500">{project.description}</p>
+      </div>
+    </div>
+  ))}
+</div>

@@ -1,0 +1,166 @@
+---
+import '@fontsource-variable/inter';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileMenu from '../components/MobileMenu.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { 
+  title, 
+  description = "HOSPITAX - Empresa profesional de vaciado de pisos en Hospitalet de Llobregat. Servicio rápido, económico y ecológico. Presupuesto sin compromiso ☎ 690 22 09 44"
+} = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "HOSPITAX",
+  "image": "https://hospitax.pages.dev/images/logo.png",
+  "description": description,
+  "@id": "https://hospitax.pages.dev",
+  "url": "https://hospitax.pages.dev",
+  "telephone": "+34690220944",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Carrer Pi i Margall, 5",
+    "addressLocality": "L'Hospitalet de Llobregat",
+    "postalCode": "08902",
+    "addressRegion": "Barcelona",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 41.3662,
+    "longitude": 2.1101
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "opens": "08:00",
+    "closes": "20:00"
+  },
+  "sameAs": [
+    "https://www.facebook.com/hospitax",
+    "https://www.instagram.com/hospitax"
+  ],
+  "priceRange": "€€"
+};
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    
+    <!-- Precargar fuentes críticas -->
+    <link 
+      rel="preload" 
+      href="/fonts/inter-var.woff2" 
+      as="font" 
+      type="font/woff2" 
+      crossorigin
+    />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="vaciado de pisos, vaciado de locales, vaciado de oficinas, limpieza, desalojo, Hospitalet de Llobregat, Barcelona, gestión de residuos, reciclaje, mudanzas" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hospitax.pages.dev" />
+    <meta property="og:image" content="https://hospitax.pages.dev/images/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://hospitax.pages.dev/images/logo.png" />
+    <link rel="canonical" href="https://hospitax.pages.dev" />
+    
+    <!-- Schema.org markup -->
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="min-h-screen bg-gray-50">
+    <Header />
+    <MobileMenu />
+    <slot />
+    <Footer />
+    <CookieBanner />
+    <button
+      id="back-to-top"
+      class="fixed bottom-8 right-8 bg-primary-600 text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300 hover:bg-primary-700"
+      aria-label="Volver arriba"
+    >
+      <svg class="w-6 h-6" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+      </svg>
+    </button>
+    <a
+      href="https://wa.link/hgjzfb"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fixed bottom-8 right-24 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-colors"
+      aria-label="Contactar por WhatsApp"
+    >
+      <svg class="w-6 h-6" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+      </svg>
+    </a>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --accent: 14, 165, 233;
+    --accent-light: 186, 230, 253;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Optimizar renderizado de fuentes */
+  body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* Prevenir CLS */
+  img {
+    aspect-ratio: attr(width) / attr(height);
+  }
+</style>
+
+<script>
+  // Cargar scripts no críticos de forma diferida
+  window.addEventListener('load', () => {
+    const backToTop = document.getElementById('back-to-top');
+
+    if (backToTop) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTop.style.opacity = '1';
+        } else {
+          backToTop.style.opacity = '0';
+        }
+      }, { passive: true });
+
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0 });
+      });
+    }
+  });
+</script>

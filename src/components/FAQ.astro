@@ -1,0 +1,111 @@
+---
+const faqs = [
+  {
+    question: "¿Cómo funciona el proceso de vaciado de pisos?",
+    answer: "Nuestro servicio de vaciado de pisos es rápido, eficiente y respetuoso con el medio ambiente. Comenzamos con una visita previa para evaluar el espacio y los elementos a retirar. Luego, planificamos el trabajo para garantizar que se realice en el menor tiempo posible y con la máxima eficacia. Finalmente, retiramos muebles, electrodomésticos, objetos personales y desechos, asegurándonos de que el espacio quede limpio y listo para su próximo uso."
+  },
+  {
+    question: "¿Qué incluye el servicio de vaciado de pisos?",
+    answer: `Nuestro servicio incluye:
+    • Retirada de muebles y electrodomésticos.
+    • Clasificación y transporte de objetos reciclables.
+    • Gestión de residuos conforme a la normativa vigente.
+    • Limpieza básica del espacio.
+    Si tienes requerimientos adicionales, como una limpieza profunda o la retirada de elementos específicos, no dudes en consultarnos.`
+  },
+  {
+    question: "¿Cuánto cuesta el vaciado de pisos en Hospitalet de Llobregat?",
+    answer: `El costo del servicio depende de factores como:
+    • El tamaño del piso o local.
+    • La cantidad y tipo de objetos a retirar.
+    • La dificultad de acceso al inmueble.
+    Solicita tu presupuesto personalizado sin compromiso. Garantizamos precios competitivos y transparencia total en nuestras tarifas.`
+  },
+  {
+    question: "¿Cuánto tiempo se tarda en vaciar un piso?",
+    answer: "El tiempo estimado varía según el tamaño del espacio y la cantidad de objetos a retirar. En la mayoría de los casos, completamos el trabajo en menos de un día. Para inmuebles más grandes o con condiciones especiales, ofrecemos una planificación detallada con tiempos ajustados a tus necesidades."
+  },
+  {
+    question: "¿Qué sucede con los objetos retirados?",
+    answer: `Nos aseguramos de dar un destino responsable a todos los objetos:
+    • Reciclamos materiales reutilizables.
+    • Donamos artículos en buen estado a organizaciones benéficas.
+    • Depositamos los residuos en puntos autorizados para su correcta gestión.
+    Nuestro compromiso con el medio ambiente es una parte fundamental de nuestro servicio.`
+  },
+  {
+    question: "¿Pueden vaciar pisos en malas condiciones o con acumulación extrema?",
+    answer: "¡Por supuesto! Contamos con la experiencia y el equipo necesario para manejar situaciones complejas, incluyendo inmuebles en estado de abandono o con acumulación extrema de objetos. Trabajamos con discreción y aseguramos un resultado impecable."
+  },
+  {
+    question: "¿Ofrecen servicios adicionales además del vaciado de pisos?",
+    answer: `Sí, además del vaciado, ofrecemos:
+    • Limpieza profunda post-vaciado.
+    • Desinfección de espacios.
+    • Retirada de escombros tras reformas.
+    • Pequeñas reparaciones o acondicionamiento del inmueble.
+    Consulta nuestras opciones adicionales para un servicio completamente adaptado a tus necesidades.`
+  },
+  {
+    question: "¿HOSPITAX está asegurado?",
+    answer: "Sí, contamos con un seguro de responsabilidad civil que protege tanto a nuestros trabajadores como a tus bienes durante todo el proceso. Puedes confiar en nuestra profesionalidad y seguridad en cada etapa del trabajo."
+  },
+  {
+    question: "¿Qué áreas cubren sus servicios?",
+    answer: "Nos especializamos en vaciados en Hospitalet de Llobregat y alrededores, pero también atendemos solicitudes en otras zonas de Barcelona y cercanías. Contáctanos para verificar la disponibilidad en tu área."
+  },
+  {
+    question: "¿Cómo puedo contratar el servicio?",
+    answer: `Es muy sencillo. Solo tienes que seguir estos pasos:
+    • Contacta con nosotros a través de nuestro formulario, teléfono o WhatsApp.
+    • Proporciona detalles sobre tu inmueble y los servicios que necesitas.
+    • Recibe un presupuesto personalizado sin compromiso.
+    • Confirma tu cita y nosotros nos encargamos del resto.`
+  },
+  {
+    question: "¿Qué debo hacer antes del vaciado?",
+    answer: `Te recomendamos:
+    • Separar los objetos personales o de valor que desees conservar.
+    • Informarnos sobre cualquier objeto especial que requiera un manejo diferente.
+    • Facilitar el acceso al inmueble, si es posible.
+    Si necesitas ayuda para organizar o clasificar tus pertenencias, ¡estamos aquí para asesorarte!`
+  }
+];
+---
+
+<section class="bg-white py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-3xl font-extrabold text-gray-900">
+        Preguntas Frecuentes (FAQ)
+      </h2>
+      <p class="mt-4 text-xl text-gray-500">
+        Resolvemos tus dudas sobre nuestros servicios de vaciado
+      </p>
+    </div>
+
+    <div class="mt-12 max-w-3xl mx-auto divide-y divide-gray-200">
+      {faqs.map((faq) => (
+        <div class="py-6">
+          <details class="group">
+            <summary class="flex justify-between items-center cursor-pointer">
+              <h3 class="text-lg font-medium text-gray-900 group-open:text-primary-600">
+                {faq.question}
+              </h3>
+              <span class="ml-6 flex-shrink-0">
+                <svg class="h-6 w-6 text-gray-400 group-open:text-primary-600 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="mt-4 pr-12">
+              <p class="text-base text-gray-500 whitespace-pre-line">
+                {faq.answer}
+              </p>
+            </div>
+          </details>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
